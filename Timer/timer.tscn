@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd1wof86wwhie"]
+
+[ext_resource type="Script" path="res://Timer/timer.gd" id="1_pcyxv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vf6ep"]
+bg_color = Color(0, 0, 0, 1)
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xom1h"]
+bg_color = Color(1, 1, 1, 1)
+border_color = Color(0, 0, 0, 1)
+
+[node name="ProgressBar" type="ProgressBar"]
+offset_right = 140.0
+offset_bottom = 7.0
+theme_override_styles/background = SubResource("StyleBoxFlat_vf6ep")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xom1h")
+value = 100.0
+show_percentage = false
+script = ExtResource("1_pcyxv")
