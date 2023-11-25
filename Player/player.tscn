@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dqswbye2yynj6"]
 
 [ext_resource type="Shader" path="res://shared/invert.gdshader" id="1_sbh2x"]
-[ext_resource type="Texture2D" uid="uid://du7a5pr8r0l6g" path="res://player/assets/lightsource.png" id="2_iu256"]
+[ext_resource type="Texture2D" uid="uid://du7a5pr8r0l6g" path="res://Player/assets/lightsource.png" id="2_iu256"]
 [ext_resource type="Script" path="res://player/player.gd" id="3_gauld"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_po3rs"]

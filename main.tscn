@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://main.gd" id="1_r87ph"]
 [ext_resource type="TileSet" uid="uid://cvxd1c2jqkca6" path="res://tileset.tres" id="1_rgeif"]
-[ext_resource type="PackedScene" uid="uid://dqswbye2yynj6" path="res://player/player.tscn" id="3_hhhcf"]
+[ext_resource type="PackedScene" uid="uid://dqswbye2yynj6" path="res://Player/player.tscn" id="3_hhhcf"]
 [ext_resource type="PackedScene" uid="uid://croyewqn3t48v" path="res://Monster/monster.tscn" id="4_8h63r"]
 [ext_resource type="PackedScene" uid="uid://tvcabp3qqro6" path="res://Object Spawner/object_spawner.tscn" id="4_53a5a"]
-[ext_resource type="PackedScene" uid="uid://brcurdcfyfrrj" path="res://kid/kid.tscn" id="4_bagnl"]
 [ext_resource type="PackedScene" uid="uid://lj5vnlym4v3s" path="res://timer/timer.tscn" id="4_snjkc"]
+[ext_resource type="PackedScene" uid="uid://bq2iikb4a55qw" path="res://kid/kid.tscn" id="6_4uc72"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_r87ph")
@@ -30,7 +30,7 @@ atlas_coords = Array[Vector2i]([Vector2i(1, 2)])
 
 [node name="KidSpawner" parent="." node_paths=PackedStringArray("map") instance=ExtResource("4_53a5a")]
 map = NodePath("../TileMap")
-object = ExtResource("4_bagnl")
+object = ExtResource("6_4uc72")
 atlas_coords = Array[Vector2i]([Vector2i(2, 5)])
 
 [node name="Player" parent="." instance=ExtResource("3_hhhcf")]

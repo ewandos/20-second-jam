@@ -1,50 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://bq2iikb4a55qw"]
+[gd_scene load_steps=4 format=3 uid="uid://bq2iikb4a55qw"]
 
-[ext_resource type="PackedScene" uid="uid://brcurdcfyfrrj" path="res://Character/character.tscn" id="1_ktl5y"]
-[ext_resource type="Texture2D" uid="uid://yyx56j2qkd4e" path="res://kid/kid.png" id="1_p6okw"]
+[ext_resource type="PackedScene" uid="uid://brcurdcfyfrrj" path="res://Character/character.tscn" id="1_m4yfe"]
+[ext_resource type="SpriteFrames" uid="uid://c3lw0dm8pt4xv" path="res://kid/kid_spriteframes.tres" id="2_blo3k"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_twrw3"]
-atlas = ExtResource("1_p6okw")
-region = Rect2(0, 0, 8, 8)
+[sub_resource type="CircleShape2D" id="CircleShape2D_o6p2d"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_01j6q"]
-atlas = ExtResource("1_p6okw")
-region = Rect2(0, 0, 8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hin6t"]
-atlas = ExtResource("1_p6okw")
-region = Rect2(8, 0, 8, 8)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_yba3c"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_twrw3")
-}],
-"loop": false,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_01j6q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hin6t")
-}],
-"loop": true,
-"name": &"walking",
-"speed": 5.0
-}]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ckc2i"]
-radius = 3.0
-
-[node name="Kid" instance=ExtResource("1_ktl5y")]
+[node name="Kid" instance=ExtResource("1_m4yfe")]
 
 [node name="AnimatedSprite2D" parent="." index="0"]
-sprite_frames = SubResource("SpriteFrames_yba3c")
+sprite_frames = ExtResource("2_blo3k")
 
-[node name="CollisionShape2D" parent="." index="1"]
-shape = SubResource("CircleShape2D_ckc2i")
-disabled = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+shape = SubResource("CircleShape2D_o6p2d")
