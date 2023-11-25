@@ -4,15 +4,18 @@
 [ext_resource type="Script" path="res://Monster/monster.gd" id="2_sfkem"]
 [ext_resource type="SpriteFrames" uid="uid://dgton7lkchp0t" path="res://Monster/monster_spriteframes.tres" id="2_xeijl"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_r2tq0"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_0dndv"]
 radius = 4.0
 
 [node name="Monster" instance=ExtResource("1_k113j")]
+collision_mask = 1
+monitorable = false
 script = ExtResource("2_sfkem")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = ExtResource("2_xeijl")
 
-[node name="CollisionShape2D" parent="." index="1"]
-shape = SubResource("CircleShape2D_r2tq0")
-disabled = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+shape = SubResource("CircleShape2D_0dndv")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

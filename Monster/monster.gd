@@ -19,3 +19,7 @@ func _process(delta: float) -> void:
 	if nearest_target == null: return
 	
 	set_movement_target(nearest_target.global_position)
+
+
+func _on_area_entered(area: Area2D) -> void:
+	print("GAME OVER")

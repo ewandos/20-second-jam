@@ -37,14 +37,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ckc2i"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_bp8ds"]
 radius = 3.0
 
 [node name="Kid" instance=ExtResource("1_ktl5y")]
+collision_layer = 1
+monitoring = false
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_yba3c")
 
-[node name="CollisionShape2D" parent="." index="1"]
-shape = SubResource("CircleShape2D_ckc2i")
-disabled = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+shape = SubResource("CircleShape2D_bp8ds")
