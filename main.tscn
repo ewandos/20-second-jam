@@ -15,9 +15,9 @@ layer_0/tile_data = PackedInt32Array(65538, 1, 0, 131074, 1, 2, 196610, 1, 2, 26
 
 [node name="Timer" parent="." instance=ExtResource("4_snjkc")]
 
-[node name="Player" parent="." instance=ExtResource("3_hhhcf")]
-position = Vector2(92, 27)
-
 [node name="KidController" parent="." node_paths=PackedStringArray("map") instance=ExtResource("4_53a5a")]
 map = NodePath("../TileMap")
 show_debug = true
+
+[node name="Player" parent="." instance=ExtResource("3_hhhcf")]
+position = Vector2(92, 27)
