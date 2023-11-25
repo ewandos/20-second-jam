@@ -4,23 +4,11 @@ extends ProgressBar
 
 signal on_completed
 
-var timer: Timer
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# Setup Timer
-	timer = Timer.new()
-	timer.set_wait_time(1.0)
-	timer.set_one_shot(false)
-	timer.timeout.connect(self.count_down)
-	add_child(timer)
-	timer.start()
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "value", self.max_value, duration)
+	tween.tween_callback(_finish)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func count_down():
-	if self.value < self.max_value:
-		self.value += self.max_value / duration
-	else:
-		timer.stop()
-		timer.queue_free()
-		on_completed.emit()
+func _finish():
+	on_completed.emit()
