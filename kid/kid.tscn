@@ -4,8 +4,11 @@
 [ext_resource type="SpriteFrames" uid="uid://c3lw0dm8pt4xv" path="res://kid/kid_spriteframes.tres" id="2_blo3k"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o6p2d"]
+radius = 3.0
 
 [node name="Kid" instance=ExtResource("1_m4yfe")]
+collision_layer = 1
+monitoring = false
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = ExtResource("2_blo3k")
