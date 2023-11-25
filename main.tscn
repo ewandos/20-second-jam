@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bbuqmemdvbhls"]
 
 [ext_resource type="TileSet" uid="uid://cvxd1c2jqkca6" path="res://tileset.tres" id="1_rgeif"]
-[ext_resource type="PackedScene" uid="uid://8c5485ntoe1p" path="res://Player/player.tscn" id="3_hhhcf"]
-[ext_resource type="PackedScene" uid="uid://dd1wof86wwhie" path="res://Timer/timer.tscn" id="4_snjkc"]
+[ext_resource type="PackedScene" uid="uid://dqswbye2yynj6" path="res://Player/player.tscn" id="3_hhhcf"]
+[ext_resource type="PackedScene" uid="uid://lj5vnlym4v3s" path="res://Timer/timer.tscn" id="4_snjkc"]
 
 [node name="Main" type="Node2D"]
 
