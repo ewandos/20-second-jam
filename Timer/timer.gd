@@ -2,6 +2,8 @@ extends ProgressBar
 
 @export var duration: int = 20
 
+signal on_completed
+
 var timer: Timer
 
 # Called when the node enters the scene tree for the first time.
@@ -16,8 +18,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func count_down():
-	if self.value > 0:
-		self.value -= self.max_value / duration
+	if self.value < self.max_value:
+		self.value += self.max_value / duration
 	else:
 		timer.stop()
 		timer.queue_free()
+		on_completed.emit()

@@ -23,4 +23,3 @@ texture = ExtResource("3_3vrad")
 offset = Vector2(0.5, 2.08165e-12)
 
 [node name="Timer" parent="." instance=ExtResource("4_snjkc")]
-offset_bottom = 3.0
