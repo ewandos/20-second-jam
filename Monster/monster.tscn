@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://croyewqn3t48v"]
+[gd_scene load_steps=5 format=3 uid="uid://croyewqn3t48v"]
 
 [ext_resource type="PackedScene" uid="uid://brcurdcfyfrrj" path="res://Character/character.tscn" id="1_k113j"]
+[ext_resource type="Script" path="res://Monster/monster.gd" id="2_sfkem"]
 [ext_resource type="SpriteFrames" uid="uid://dgton7lkchp0t" path="res://Monster/monster_spriteframes.tres" id="2_xeijl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r2tq0"]
 radius = 4.0
 
 [node name="Monster" instance=ExtResource("1_k113j")]
+script = ExtResource("2_sfkem")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = ExtResource("2_xeijl")
