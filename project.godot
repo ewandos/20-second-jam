@@ -10,15 +10,15 @@ config_version=5
 
 [application]
 
-config/name="20-second-jam"
+config/name="20 Second Jam"
 run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=140
-window/size/viewport_height=80
+window/size/viewport_width=280
+window/size/viewport_height=160
 window/size/window_width_override=960
 window/size/window_height_override=680
 window/stretch/mode="viewport"
