@@ -1,4 +1,4 @@
-class_name Kid
+class_name Character
 extends CharacterBody2D
 
 @export var movement_speed: float = 4.0

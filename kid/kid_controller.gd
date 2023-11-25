@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 
 func spawn_kids() -> void:
 	for i in kid_count:
-		var i_kid := kid_scene.instantiate() as Kid
+		var i_kid := kid_scene.instantiate() as Character
 		add_child(i_kid)
 		i_kid.global_position = _pick_random_walkable_position()
 		i_kid.set_movement_target(_pick_random_walkable_position())
