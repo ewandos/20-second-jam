@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bbuqmemdvbhls"]
+[gd_scene load_steps=8 format=3 uid="uid://bbuqmemdvbhls"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_r87ph"]
 [ext_resource type="TileSet" uid="uid://cvxd1c2jqkca6" path="res://tileset.tres" id="1_rgeif"]
 [ext_resource type="PackedScene" uid="uid://8c5485ntoe1p" path="res://Player/player.tscn" id="3_hhhcf"]
 [ext_resource type="PackedScene" uid="uid://croyewqn3t48v" path="res://Monster/monster.tscn" id="4_8h63r"]
@@ -8,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dd1wof86wwhie" path="res://Timer/timer.tscn" id="4_snjkc"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_r87ph")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_rgeif")

@@ -9,11 +9,12 @@ extends Node2D
 var rng := RandomNumberGenerator.new()
 var last_position := Vector2.ZERO
 
-func spawn_object() -> void:
+func spawn_object() -> Node2D:
 	var instance := object.instantiate()
 	add_child(instance)
 	instance.global_position = _pick_random_walkable_position()
-
+	return instance
+	
 func _pick_random_walkable_position() -> Vector2:
 	var possible_cells: Array[Vector2i]
 	
