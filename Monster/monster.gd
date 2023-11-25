@@ -20,6 +20,6 @@ func _process(delta: float) -> void:
 	
 	set_movement_target(nearest_target.global_position)
 
-
 func _on_area_entered(area: Area2D) -> void:
-	print("GAME OVER")
+	print("Game Over")
+	Events.game_over.emit()

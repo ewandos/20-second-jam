@@ -2,14 +2,14 @@ class_name ObjectSpawner
 extends Node2D
 
 @export var map: TileMap
-@export var show_debug: bool
-@export var atlas_coords: Array[Vector2i]
 @export var object: PackedScene
 
-var rng := RandomNumberGenerator.new()
-var last_position := Vector2.ZERO
+## Atlas coords of tiles on which the objects can be spawned
+@export var atlas_coords: Array[Vector2i]
 
-func spawn_object() -> Node2D:
+var rng := RandomNumberGenerator.new()
+
+func spawn_object_on_random_location() -> Node2D:
 	var instance := object.instantiate()
 	add_child(instance)
 	instance.global_position = _pick_random_walkable_position()
@@ -28,17 +28,9 @@ func _pick_random_walkable_position() -> Vector2:
 	var random_cell := possible_cells[random_index]
 	var random_position := map.map_to_local(random_cell)
 	
-	if show_debug:
-		last_position = random_position
-		queue_redraw()
-	
 	return random_position
 
 func is_valid_tile(atlas_coord: Vector2i) -> bool:
 	for coord in atlas_coords:
 		if atlas_coord == coord: return true
 	return false
-
-func _draw() -> void:
-	if not show_debug: return
-	draw_circle(last_position, 1, Color.MAGENTA)

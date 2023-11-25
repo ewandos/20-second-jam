@@ -10,9 +10,14 @@ var kids: Array[Node2D]
 
 func _ready() -> void:
 	for i in kid_count:
-		var kid = kid_spawner.spawn_object()
+		var kid = kid_spawner.spawn_object_on_random_location()
 		kids.append(kid)
 	
 	for i in monster_count:
-		var monster = monster_spawner.spawn_object() as Monster
+		var monster = monster_spawner.spawn_object_on_random_location() as Monster
 		monster.setup(kids)
+		
+	Events.game_over.connect(_on_game_over)
+	
+func _on_game_over():
+	get_tree().quit()
