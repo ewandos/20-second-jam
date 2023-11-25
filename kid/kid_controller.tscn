@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://tvcabp3qqro6"]
-
-[ext_resource type="Script" path="res://kid/kid_controller.gd" id="1_rcncs"]
-
-[node name="KidController" type="Node2D"]
-script = ExtResource("1_rcncs")

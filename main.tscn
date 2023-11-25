@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbuqmemdvbhls"]
+[gd_scene load_steps=7 format=3 uid="uid://bbuqmemdvbhls"]
 
 [ext_resource type="TileSet" uid="uid://cvxd1c2jqkca6" path="res://tileset.tres" id="1_rgeif"]
 [ext_resource type="PackedScene" uid="uid://8c5485ntoe1p" path="res://Player/player.tscn" id="3_hhhcf"]
-[ext_resource type="PackedScene" uid="uid://tvcabp3qqro6" path="res://kid/kid_controller.tscn" id="4_53a5a"]
+[ext_resource type="PackedScene" uid="uid://croyewqn3t48v" path="res://Monster/monster.tscn" id="4_8h63r"]
+[ext_resource type="PackedScene" uid="uid://tvcabp3qqro6" path="res://Object Spawner/object_spawner.tscn" id="4_53a5a"]
+[ext_resource type="PackedScene" uid="uid://bq2iikb4a55qw" path="res://kid/kid.tscn" id="4_bagnl"]
 [ext_resource type="PackedScene" uid="uid://dd1wof86wwhie" path="res://Timer/timer.tscn" id="4_snjkc"]
 
 [node name="Main" type="Node2D"]
@@ -15,9 +17,15 @@ layer_0/tile_data = PackedInt32Array(65538, 1, 0, 131074, 1, 2, 196610, 1, 2, 26
 
 [node name="Timer" parent="." instance=ExtResource("4_snjkc")]
 
-[node name="KidController" parent="." node_paths=PackedStringArray("map") instance=ExtResource("4_53a5a")]
+[node name="MonsterSpawner" parent="." node_paths=PackedStringArray("map") instance=ExtResource("4_53a5a")]
 map = NodePath("../TileMap")
-show_debug = true
+atlas_coords = Array[Vector2i]([Vector2i(1, 2)])
+object = ExtResource("4_8h63r")
+
+[node name="KidSpawner" parent="." node_paths=PackedStringArray("map") instance=ExtResource("4_53a5a")]
+map = NodePath("../TileMap")
+atlas_coords = Array[Vector2i]([Vector2i(2, 5)])
+object = ExtResource("4_bagnl")
 
 [node name="Player" parent="." instance=ExtResource("3_hhhcf")]
 position = Vector2(92, 27)
