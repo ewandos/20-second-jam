@@ -1,7 +1,12 @@
 class_name Monster
 extends Character
 
+@export var sprite_frames: Array[SpriteFrames]
+
 var _targets: Array[Node2D]
+
+func _ready() -> void:
+	sprite.sprite_frames = sprite_frames.pick_random()
 
 func setup(targets: Array[Node2D]):
 	_targets = targets

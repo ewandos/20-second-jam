@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://croyewqn3t48v"]
+[gd_scene load_steps=7 format=3 uid="uid://croyewqn3t48v"]
 
 [ext_resource type="PackedScene" uid="uid://brcurdcfyfrrj" path="res://Character/character.tscn" id="1_k113j"]
 [ext_resource type="Script" path="res://Monster/monster.gd" id="2_sfkem"]
-[ext_resource type="SpriteFrames" uid="uid://dgton7lkchp0t" path="res://Monster/monster_spriteframes.tres" id="2_xeijl"]
+[ext_resource type="SpriteFrames" uid="uid://vvjh0krqm2hw" path="res://Monster/devil_spriteframes.tres" id="3_6hodw"]
+[ext_resource type="SpriteFrames" uid="uid://dgton7lkchp0t" path="res://Monster/squid_spriteframes.tres" id="3_bbdwi"]
+[ext_resource type="SpriteFrames" uid="uid://u84tuldiwcoc" path="res://Monster/eye_spriteframes.tres" id="3_x8815"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0dndv"]
 radius = 4.0
@@ -11,9 +13,8 @@ radius = 4.0
 collision_layer = 2
 collision_mask = 1
 script = ExtResource("2_sfkem")
-
-[node name="AnimatedSprite2D" parent="." index="0"]
-sprite_frames = ExtResource("2_xeijl")
+sprite_frames = Array[SpriteFrames]([ExtResource("3_6hodw"), ExtResource("3_x8815"), ExtResource("3_bbdwi")])
+movement_speed = 8.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 shape = SubResource("CircleShape2D_0dndv")
