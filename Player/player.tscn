@@ -1,0 +1,13 @@
+[gd_scene load_steps=5 format=3 uid="uid://8c5485ntoe1p"]
+
+[ext_resource type="Texture2D" uid="uid://du7a5pr8r0l6g" path="res://Player/assets/lightsource.png" id="1_8ij0p"]
+[ext_resource type="Shader" path="res://Shared/invert.gdshader" id="1_vyd6q"]
+[ext_resource type="Script" path="res://Player/player.gd" id="3_rsurx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_po3rs"]
+shader = ExtResource("1_vyd6q")
+
+[node name="Player" type="Sprite2D"]
+material = SubResource("ShaderMaterial_po3rs")
+texture = ExtResource("1_8ij0p")
+script = ExtResource("3_rsurx")
