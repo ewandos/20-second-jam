@@ -1,50 +1,52 @@
-[gd_scene load_steps=8 format=3 uid="uid://bq2iikb4a55qw"]
+[gd_scene load_steps=7 format=3 uid="uid://brcurdcfyfrrj"]
 
-[ext_resource type="PackedScene" uid="uid://brcurdcfyfrrj" path="res://Character/character.tscn" id="1_ktl5y"]
+[ext_resource type="Script" path="res://kid/kid.gd" id="1_d3a42"]
 [ext_resource type="Texture2D" uid="uid://yyx56j2qkd4e" path="res://kid/kid.png" id="1_p6okw"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_twrw3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2j62"]
 atlas = ExtResource("1_p6okw")
 region = Rect2(0, 0, 8, 8)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_01j6q"]
-atlas = ExtResource("1_p6okw")
-region = Rect2(0, 0, 8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hin6t"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2447b"]
 atlas = ExtResource("1_p6okw")
 region = Rect2(8, 0, 8, 8)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_yba3c"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_8mtyi"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_twrw3")
-}],
-"loop": false,
+"frames": [],
+"loop": true,
 "name": &"default",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_01j6q")
+"texture": SubResource("AtlasTexture_l2j62")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hin6t")
+"texture": SubResource("AtlasTexture_2447b")
 }],
 "loop": true,
 "name": &"walking",
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ckc2i"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_jooo2"]
 radius = 3.0
 
-[node name="Kid" instance=ExtResource("1_ktl5y")]
+[node name="Kid" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_d3a42")
 
-[node name="AnimatedSprite2D" parent="." index="0"]
-sprite_frames = SubResource("SpriteFrames_yba3c")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8mtyi")
+animation = &"walking"
+frame = 1
+frame_progress = 0.932342
 
-[node name="CollisionShape2D" parent="." index="1"]
-shape = SubResource("CircleShape2D_ckc2i")
-disabled = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jooo2")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 2.0
+target_desired_distance = 2.0
