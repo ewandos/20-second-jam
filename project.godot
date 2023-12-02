@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="20 Second Jam"
-run/main_scene="res://main.tscn"
+run/main_scene="res://game.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -23,9 +23,10 @@ Events="*res://Events.gd"
 
 window/size/viewport_width=280
 window/size/viewport_height=160
-window/size/window_width_override=960
-window/size/window_height_override=680
+window/size/window_width_override=1120
+window/size/window_height_override=640
 window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [layer_names]
 
