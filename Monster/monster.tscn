@@ -14,7 +14,9 @@ collision_layer = 2
 collision_mask = 1
 script = ExtResource("2_sfkem")
 sprite_frames = Array[SpriteFrames]([ExtResource("3_6hodw"), ExtResource("3_x8815"), ExtResource("3_bbdwi")])
-movement_speed = 8.0
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+modulate = Color(0, 0, 0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 shape = SubResource("CircleShape2D_0dndv")
