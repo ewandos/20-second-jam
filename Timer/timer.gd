@@ -1,13 +1,14 @@
-extends ProgressBar
+extends HBoxContainer
 
 @export var duration: int = 20
 
+@onready var progress_bar := $ProgressBar as ProgressBar
+
 signal on_completed
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "value", self.max_value, duration)
+	tween.tween_property(progress_bar, "value", progress_bar.max_value, duration)
 	tween.tween_callback(_finish)
 
 func _finish():

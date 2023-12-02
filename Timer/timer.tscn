@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://lj5vnlym4v3s"]
+[gd_scene load_steps=6 format=3 uid="uid://2kn4yhl5mm4r"]
 
 [ext_resource type="Script" path="res://timer/timer.gd" id="1_e8r58"]
-[ext_resource type="Texture2D" uid="uid://fw33ot76s68o" path="res://timer/assets/moon.png" id="2_cuaj0"]
-[ext_resource type="Texture2D" uid="uid://dmr0ry3ywubn1" path="res://timer/assets/sun.png" id="3_825kc"]
+[ext_resource type="Texture2D" uid="uid://fw33ot76s68o" path="res://Timer/assets/moon.png" id="2_cuaj0"]
+[ext_resource type="Texture2D" uid="uid://dmr0ry3ywubn1" path="res://Timer/assets/sun.png" id="3_825kc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vf6ep"]
 bg_color = Color(0, 0, 0, 1)
@@ -15,6 +15,7 @@ border_color = Color(0, 0, 0, 1)
 [node name="Timer" type="HBoxContainer"]
 offset_right = 279.0
 offset_bottom = 9.0
+script = ExtResource("1_e8r58")
 
 [node name="Moon" type="TextureRect" parent="."]
 layout_mode = 2
@@ -28,7 +29,6 @@ size_flags_vertical = 4
 theme_override_styles/background = SubResource("StyleBoxFlat_vf6ep")
 theme_override_styles/fill = SubResource("StyleBoxFlat_xom1h")
 show_percentage = false
-script = ExtResource("1_e8r58")
 
 [node name="Sun" type="TextureRect" parent="."]
 layout_mode = 2
