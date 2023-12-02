@@ -5,11 +5,13 @@ extends Area2D
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+var can_move := true
+	
 func set_movement_target(movement_target: Vector2):
 	navigation_agent.set_target_position(movement_target)
 
 func _physics_process(delta):
-	if navigation_agent.is_navigation_finished():
+	if not can_move or navigation_agent.is_navigation_finished():
 		sprite.play('default')
 		return
 
