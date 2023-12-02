@@ -11,7 +11,8 @@ func _ready() -> void:
 func setup(targets: Array[Node2D]):
 	_targets = targets
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
+	
 	var min_distance := INF
 	var nearest_target: Node2D
 	
@@ -25,6 +26,5 @@ func _process(delta: float) -> void:
 	
 	set_movement_target(nearest_target.global_position)
 
-func _on_area_entered(area: Area2D) -> void:
-	print("Game Over")
+func _on_area_entered(_area: Area2D) -> void:
 	Events.game_over.emit()
