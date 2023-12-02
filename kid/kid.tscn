@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bq2iikb4a55qw"]
+[gd_scene load_steps=5 format=3 uid="uid://bq2iikb4a55qw"]
 
 [ext_resource type="PackedScene" uid="uid://brcurdcfyfrrj" path="res://Character/character.tscn" id="1_m4yfe"]
 [ext_resource type="SpriteFrames" uid="uid://c3lw0dm8pt4xv" path="res://kid/kid_spriteframes.tres" id="2_blo3k"]
+[ext_resource type="Script" path="res://kid/kid.gd" id="2_xkdrp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o6p2d"]
 radius = 3.0
@@ -9,9 +10,15 @@ radius = 3.0
 [node name="Kid" instance=ExtResource("1_m4yfe")]
 collision_layer = 1
 monitoring = false
+script = ExtResource("2_xkdrp")
+movement_speed = 6.0
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = ExtResource("2_blo3k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 shape = SubResource("CircleShape2D_o6p2d")
+
+[node name="Timer" type="Timer" parent="." index="3"]
+wait_time = 4.0
+one_shot = true

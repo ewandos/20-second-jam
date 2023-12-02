@@ -7,30 +7,9 @@ extends Node2D
 ## Atlas coords of tiles on which the objects can be spawned
 @export var atlas_coords: Array[Vector2i]
 
-var rng := RandomNumberGenerator.new()
-
 func spawn_object_on_random_location() -> Node2D:
 	var instance := object.instantiate()
 	add_child(instance)
-	instance.global_position = _pick_random_walkable_position()
+	instance.global_position = map.pick_random_walkable_position(atlas_coords)
 	return instance
-	
-func _pick_random_walkable_position() -> Vector2:
-	var possible_cells: Array[Vector2i]
-	
-	for cell_v in map.get_used_cells(0):
-		var is_walkable := is_valid_tile(map.get_cell_atlas_coords(0, cell_v))
-		if is_walkable: possible_cells.append(cell_v)
-	
-	if possible_cells.size() == 0: return Vector2.ZERO
-	
-	var random_index = rng.randi_range(0, possible_cells.size() - 1)
-	var random_cell := possible_cells[random_index]
-	var random_position := map.map_to_local(random_cell)
-	
-	return random_position
 
-func is_valid_tile(atlas_coord: Vector2i) -> bool:
-	for coord in atlas_coords:
-		if atlas_coord == coord: return true
-	return false
