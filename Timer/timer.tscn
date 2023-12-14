@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://2kn4yhl5mm4r"]
 
 [ext_resource type="Script" path="res://timer/timer.gd" id="1_e8r58"]
-[ext_resource type="Texture2D" uid="uid://fw33ot76s68o" path="res://Timer/assets/moon.png" id="2_cuaj0"]
-[ext_resource type="Texture2D" uid="uid://dmr0ry3ywubn1" path="res://Timer/assets/sun.png" id="3_825kc"]
+[ext_resource type="Texture2D" uid="uid://fw33ot76s68o" path="res://timer/assets/moon.png" id="2_cuaj0"]
+[ext_resource type="Texture2D" uid="uid://dmr0ry3ywubn1" path="res://timer/assets/sun.png" id="3_825kc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vf6ep"]
 bg_color = Color(0, 0, 0, 1)
