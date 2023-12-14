@@ -1,0 +1,37 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://c3lw0dm8pt4xv"]
+
+[ext_resource type="Texture2D" uid="uid://yyx56j2qkd4e" path="res://game_objects/kid/kid.png" id="1_xorty"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stlu8"]
+atlas = ExtResource("1_xorty")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6yq7"]
+atlas = ExtResource("1_xorty")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eti0h"]
+atlas = ExtResource("1_xorty")
+region = Rect2(8, 0, 8, 8)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stlu8")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6yq7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eti0h")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]

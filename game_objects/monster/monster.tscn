@@ -1,0 +1,24 @@
+[gd_scene load_steps=7 format=3 uid="uid://croyewqn3t48v"]
+
+[ext_resource type="PackedScene" uid="uid://brcurdcfyfrrj" path="res://game_objects/character/character.tscn" id="1_k113j"]
+[ext_resource type="Script" path="res://game_objects/monster/monster.gd" id="2_sfkem"]
+[ext_resource type="SpriteFrames" uid="uid://vvjh0krqm2hw" path="res://game_objects/monster/devil_spriteframes.tres" id="3_6hodw"]
+[ext_resource type="SpriteFrames" uid="uid://dgton7lkchp0t" path="res://game_objects/monster/squid_spriteframes.tres" id="3_bbdwi"]
+[ext_resource type="SpriteFrames" uid="uid://u84tuldiwcoc" path="res://game_objects/monster/eye_spriteframes.tres" id="3_x8815"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0dndv"]
+radius = 4.0
+
+[node name="Monster" instance=ExtResource("1_k113j")]
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("2_sfkem")
+sprite_frames = Array[SpriteFrames]([ExtResource("3_6hodw"), ExtResource("3_x8815"), ExtResource("3_bbdwi")])
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+modulate = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+shape = SubResource("CircleShape2D_0dndv")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

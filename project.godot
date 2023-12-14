@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="20 Second Jam"
-run/main_scene="res://start_screen/start_screen.tscn"
+run/main_scene="res://scenes/start_screen/start_screen.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Events="*res://Events.gd"
+Events="*res://scenes/game/events.gd"
 
 [display]
 

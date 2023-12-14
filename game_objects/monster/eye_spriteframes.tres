@@ -1,0 +1,36 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://u84tuldiwcoc"]
+
+[ext_resource type="Texture2D" uid="uid://cjf3brujw4l14" path="res://game_objects/monster/monster.png" id="1_yb2y3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ar4o"]
+atlas = ExtResource("1_yb2y3")
+region = Rect2(32, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xb1r"]
+atlas = ExtResource("1_yb2y3")
+region = Rect2(40, 0, 8, 8)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ar4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xb1r")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ar4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xb1r")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
