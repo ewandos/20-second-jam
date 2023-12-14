@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8npu0nobggob"]
+
+[ext_resource type="AudioStream" uid="uid://cmxx5kdpfgvrk" path="res://assets/audio/debussy-the-snow.mp3" id="1_0yl2h"]
+
+[node name="GlobalMusic" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_0yl2h")
+autoplay = true

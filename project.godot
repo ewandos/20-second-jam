@@ -17,7 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Events="*res://scenes/game/events.gd"
+Events="*res://globals/global_events.gd"
+GlobalMusic="*res://globals/global_music.tscn"
 
 [display]
 
